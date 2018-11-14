@@ -1,0 +1,8 @@
+﻿@model IEnumerable<AutoCatalog.Models.CarModels>
+
+<select id="Models" name="ModeLID">
+    @foreach (var item in Model)
+    {
+        <option value="@item.ID">@item.CarModel</option>
+    }
+</select>

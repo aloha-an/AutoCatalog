@@ -1,0 +1,52 @@
+﻿@model IEnumerable<AutoCatalog.Models.Autos>
+
+<div id="searchresults">
+    <table class="table">
+        <tr>
+            <th>
+                @Html.DisplayNameFor(model => model.RegistryNum)
+            </th>
+            <th>
+                @Html.DisplayNameFor(model => model.Colors.Color)
+            </th>
+            <th>
+                @Html.DisplayNameFor(model => model.Makes.Make)
+            </th>
+            <th>
+                @Html.DisplayNameFor(model => model.Users.Email)
+            </th>
+            <th>
+                @Html.DisplayNameFor(model => model.CarModels.CarModel)
+            </th>
+            <th></th>
+        </tr>
+
+        @foreach (var item in Model)
+        {
+        <tr>
+            <td>
+                @Html.DisplayFor(modelItem => item.RegistryNum)
+            </td>
+            <td>
+                @Html.DisplayFor(modelItem => item.Colors.Color)
+            </td>
+            <td>
+                @Html.DisplayFor(modelItem => item.Makes.Make)
+            </td>
+            <td>
+                @Html.DisplayFor(modelItem => item.Users.Email)
+            </td>
+            <td>
+                @Html.DisplayFor(modelItem => item.CarModels.CarModel)
+            </td>
+
+            <td>
+                @Html.ActionLink("Редактировать", "Edit", new { id = item.ID }) |
+                @Html.ActionLink("Подробнее", "Details", new { id = item.ID }) |
+                @Html.ActionLink("Убрать", "Delete", new { id = item.ID })
+            </td>
+        </tr>
+        }
+
+    </table>
+</div>

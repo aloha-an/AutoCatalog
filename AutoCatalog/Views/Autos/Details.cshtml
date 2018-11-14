@@ -1,0 +1,57 @@
+﻿@model AutoCatalog.Models.Autos
+
+@{
+    ViewBag.Title = "Подробно";
+}
+
+<h2>Подробно</h2>
+
+<div>
+     <hr />
+    <dl class="dl-horizontal">
+        <dt>
+            @Html.DisplayNameFor(model => model.RegistryNum)
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.RegistryNum)
+        </dd>
+
+        <dt>
+            @Html.DisplayNameFor(model => model.Colors.Color)
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.Colors.Color)
+        </dd>
+
+        <dt>
+            @Html.DisplayNameFor(model => model.Makes.Make)
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.Makes.Make)
+        </dd>
+
+        <dt>
+            @Html.DisplayNameFor(model => model.CarModels.CarModel)
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.CarModels.CarModel)
+        </dd>
+
+        <dt>
+            @Html.DisplayNameFor(model => model.Users.Email)
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.Users.Email)
+        </dd>
+
+    </dl>
+</div>
+<p>
+    @Html.ActionLink("Редактировать", "Edit", new { id = Model.ID }) |
+    @Html.ActionLink("К списку машин", "Index")
+</p>

@@ -1,0 +1,1 @@
+﻿$('#navbar navbar-inverse navbar-fixed-top').hide();

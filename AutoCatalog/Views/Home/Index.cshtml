@@ -1,0 +1,20 @@
+﻿@model AutoCatalog.Models.Users
+@{
+    ViewBag.Title = "Вход";
+}
+
+<div class="jumbotron">    
+    @using (Html.BeginForm("Index", "Home", FormMethod.Post))
+    {
+        <p>Введите e-mail</p>
+        <input type="email" name="Email" /><br /><br />
+        <p>Введите пароль</p>
+        <input type="password" name="Password" /><br /><br />
+        @Html.ActionLink("Регистрация", "CreateUser", "Users")
+        <br />
+        <input type="submit" id="submit" value="Вход" />
+    }
+    <div>@ViewBag.Mes</div>
+    
+</div>
+

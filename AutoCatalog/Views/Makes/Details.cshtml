@@ -1,0 +1,39 @@
+﻿@model IEnumerable<AutoCatalog.Models.CarModels>
+
+@{
+    ViewBag.Title = "Модели";
+}
+
+<h2>Модели</h2>
+
+<div>
+    <hr />
+
+    <table class="table">
+        <tr>
+            <th>
+                @Html.DisplayNameFor(model => model.Makes.Make)
+            </th>
+            <th>
+                @Html.DisplayNameFor(model => model.CarModel)
+            </th>
+            <th></th>
+        </tr>
+
+        @foreach (var item in Model)
+        {
+            <tr>
+                <td>
+                    @Html.DisplayFor(modelItem => item.Makes.Make)
+                </td>
+                <td>
+                    @Html.DisplayFor(modelItem => item.CarModel)
+                </td>
+            </tr>
+        }
+
+    </table>
+</div>
+<p>
+    @Html.ActionLink("К списку марок машин", "Index")
+</p>

@@ -1,0 +1,20 @@
+﻿@model IEnumerable<AutoCatalog.Models.Autos>
+
+@{
+    ViewBag.Title = "Все машины";
+    Layout = "~/Views/Shared/_UserLayout.cshtml";
+}
+
+<h2>Все машины</h2>
+
+<div>
+    @using (Ajax.BeginForm("SearchCars", new AjaxOptions { UpdateTargetId = "results" }))
+    {
+        <input type="text" name="name" />
+        <input type="submit" value="Поиск" />
+    }
+
+    <div id="results">@Html.Partial("SearchCars")</div>
+
+</div>    
+@Html.ActionLink("Мои машины", "Index")

@@ -1,0 +1,51 @@
+﻿@model IEnumerable<AutoCatalog.Models.Users>
+
+@{
+    ViewBag.Title = "Пользоватали";
+}
+
+<h2>Пользователи</h2>
+
+<p>
+    @Html.ActionLink("Создать нового пользователя", "Create")
+</p>
+<table class="table">
+    <tr>
+        <th>
+            @Html.DisplayNameFor(model => model.Email)
+        </th>
+        <th>
+            @Html.DisplayNameFor(model => model.Password)
+        </th>
+        <th>
+            @Html.DisplayNameFor(model => model.RegistryDate)
+        </th>
+        <th>
+            @Html.DisplayNameFor(model => model.Roles.RoleName)
+        </th>
+        <th></th>
+    </tr>
+
+@foreach (var item in Model) {
+    <tr>
+        <td>
+            @Html.DisplayFor(modelItem => item.Email)
+        </td>
+        <td>
+            @Html.DisplayFor(modelItem => item.Password)
+        </td>
+        <td>
+            @Html.DisplayFor(modelItem => item.RegistryDate)
+        </td>
+        <td>
+            @Html.DisplayFor(modelItem => item.Roles.RoleName)
+        </td>
+        <td>
+            @Html.ActionLink("Изменить", "Edit", new { id=item.ID }) |
+            @Html.ActionLink("Машины", "RedirectToAutos", new { id = item.ID },null ) |
+            @Html.ActionLink("Удалить", "Delete", new { id=item.ID })
+        </td>
+    </tr>
+}
+
+</table>
